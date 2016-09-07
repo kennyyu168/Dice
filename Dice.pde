@@ -4,13 +4,18 @@ void setup()
 	size(500,500);
 	background(0);
 	noLoop();
-	one=new Die(250,250);
+
 }
 void draw()
 {
 	//your code here
-	one.flip();
-	one.show();
+	for(int x=100; x<400; x=x+60)
+	{
+		
+		Die one=new Die(x,250);
+		one.roll();
+		one.show();
+	}
 }
 void mousePressed()
 {
@@ -18,58 +23,38 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	int face=(int)(Math.random()*6);
-	int myX,int myY;
+	int myX, myY;
 	//variable declarations here
-	Die(int x, int y) //constructor
+	Die(int x, int y)
 	{
 		//variable initializations here
 		roll();
 		myX=x;
 		myY=y;
+	
 	}
 	void roll()
 	{
 		//your code here
-		if(Math.random()<1)
+		if(((Math.random()*6)+1)<2)
 		{
-			face=1
+			fill(225,0,225);
+			ellipse(myX,myY,10,10);
+			System.out.println(1);
 		}
-		else 
+		else
 		{
-			if(Math.random()<2)
-			{
-				face=2
-			}
-			else 
-			{
-				if(Math.random()<3)
-				{
-					face=3
-				}
-				else
-				{
-					if(Math.random()<4)
-					{
-						face=4
-					}	
-					else
-					{
-						if(Math.random()<5)
-						{
-							face=5
-						}
-						else
-						{
-							if(Math.random()<6)	
-						}
-					}
-				}
-			}
+			fill(225,0,225);
+			ellipse(myX-10,myY-10,10,10);
+			fill(225,0,225);
+			ellipse(myX+10,myY+10,10,10);
+			System.out.println(2);
 		}
 	}
 	void show()
 	{
-		//your code here
+		noStroke();
+		fill(225,0,0,127);
+		rect(myX-25,myY-25,50,50);
 	}
 }

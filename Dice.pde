@@ -2,13 +2,13 @@ Die one;
 void setup()
 {
 	size(500,500);
-	background(0);
 	noLoop();
 
 }
 void draw()
 {
 	//your code here
+	background(0);
 	int sum=0;
 	for(int x=100;x<450;x=x+60)
 	{
@@ -20,7 +20,8 @@ void draw()
       		sum=sum+one.numDots;
     	} 
 	}
-	text("Points: "+ numDots ,250,450);
+	textAlign(CENTER);
+	text("Points: "+ sum ,250,450);
 }
 void mousePressed()
 {
@@ -90,7 +91,7 @@ class Die //models one single dice cube
 	void show()
 	{
 		stroke((int)(Math.random()*225),(int)(Math.random()*225),(int)(Math.random()*225));
-    	strokeWeight(2);
+    	strokeWeight(2.5);
 		fill(1,(int)(Math.random()*225),1);
 		rect(myX-25,myY-25,50,50,15);
 	}

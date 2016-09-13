@@ -7,7 +7,6 @@ void setup()
 }
 void draw()
 {
-	//your code here
 	background(0);
 	int sum=0;
 	for(int x=100;x<450;x=x+60)
@@ -21,19 +20,19 @@ void draw()
     	} 
 	}
 	textAlign(CENTER);
+	textSize(24);
+	text("Can you get over 200?",250,50);
 	text("Points: "+ sum ,250,450);
 }
 void mousePressed()
 {
 	redraw();
 }
-class Die //models one single dice cube
+class Die
 {
 	int myX, myY,numDots;
-	//variable declarations here
 	Die(int x, int y)
 	{
-		//variable initializations here
 		numDots=((int)(Math.random()*6)+1);
 		myX=x;
 		myY=y;
@@ -41,7 +40,6 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{
-		//your code here
 		if(numDots<2)
 		{
     		fill(225);
